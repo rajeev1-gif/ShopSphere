@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: shopsphere-postgres
+    environment:
+      POSTGRES_DB: shopsphere
+      POSTGRES_USER: shopsphere_app
+      POSTGRES_PASSWORD: change_this_local_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - shopsphere_data:/var/lib/postgresql/data
+volumes:
+  shopsphere_data:
